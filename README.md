@@ -111,4 +111,9 @@ WHERE  NOT (birth_date >'1990-01-01' OR points >1000)
 * SELECT * FROM order_items oi JOIN products p ON oi.product_id = p.product_id
 *  SELECT order_id,oi.product_id,quantity,oi.unit_price FROM order_items oi JOIN products p ON oi.product_id = p.product_id
 ## JOINING ACROSS DATABASES
-* 
+* Join the sql_inventory database product_id with the sql_store database product_id
+*  SELECT * 
+FROM sql_inventory.products p
+join sql_store.order_items oi
+     on oi.product_id=p.product_id
+## SELF JOINS : JOIN A TABLE WITH ITSELF
