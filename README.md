@@ -84,7 +84,7 @@ WHERE  NOT (birth_date >'1990-01-01' OR points >1000)
 ## IS NULL OPERATOR
 * Get The customers whose phone number is missing
 * SELECT * FROM customers WHERE phone IS NULL
-* * Get The customers whose Phone number is not missing
+*  Get The customers whose Phone number is not missing
 * SELECT * FROM customers WHERE phone IS NOT NULL
 ## ORDER BY CLAUSE
 * PRIMARY KEY COLUMN by which the table is sorted by default
@@ -98,4 +98,16 @@ WHERE  NOT (birth_date >'1990-01-01' OR points >1000)
 * or
 * SELECT *, unit_price*quantity AS total FROM order_items WHERE order_id=2 ORDER BY total DESC
 ## LIMIT CLAUSE : limit the records returned from the query
-* 
+* SELECT * FROM customers LIMIT 3  :  LIMITS TO 3 ROWS ONLY
+* SELECT * FROM customers LIMIT 6,3  :  LIMITS 1st 6 ROWS and then prints NEXT 3 ROWS
+* Get the top three loyal customers
+* SELECT * FROM customers ORDER BY points DESC  LIMIT 3
+##  INNER JOINS : SELECTION OF COLUMNS FROM MULTIPLE TABLES
+* combine orders table with the customers table (JOIN: INNER JOIN | OUTER JOIN ) INNER Keyword is optional 
+* ON PHRASE : on what basis do we want to join the table ,if we put these two tables next to each other we want to line up the records such that the customers id are equal
+* SELECT * FROM orders JOIN customers ON orders.customer_id = customers.customer_id
+* SELECT order_id,o.customer_id,first_name,last_name FROM orders o JOIN customers c ON o.customer_id = c.customer_id
+* Join the order items table with the products table 
+* SELECT * FROM order_items oi JOIN products p ON oi.product_id = p.product_id
+*  SELECT order_id,oi.product_id,quantity,oi.unit_price FROM order_items oi JOIN products p ON oi.product_id = p.product_id
+*  
