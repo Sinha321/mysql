@@ -110,4 +110,5 @@ WHERE  NOT (birth_date >'1990-01-01' OR points >1000)
 * Join the order items table with the products table 
 * SELECT * FROM order_items oi JOIN products p ON oi.product_id = p.product_id
 *  SELECT order_id,oi.product_id,quantity,oi.unit_price FROM order_items oi JOIN products p ON oi.product_id = p.product_id
-*  
+## JOINING ACROSS DATABASES
+* 
